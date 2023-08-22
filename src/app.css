@@ -1,0 +1,43 @@
+@import '@nativescript/theme/css/core.css';
+@import '@nativescript/theme/css/default.css';
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+Button.-primary {
+  font-size: 18;
+}
+
+.h1 {
+  font-size: 75;
+}
+
+.weather {
+  font-size: 32;
+}
+
+.temp {
+  font-size: 24;
+  font-weight: 600;
+}
+
+.button {
+  padding: 15px 30px;
+  background-color: crimson;
+  color: white;
+  font-weight: 600;
+  border-radius: 10;
+}
+
+.weatherForecast {
+  margin: 25;
+  padding: 20;
+  border-width: 1;
+  border-color: grey;
+  border-radius: 20;
+}
+
+.weatherImage {
+  margin-top: 16;
+}

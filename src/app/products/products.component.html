@@ -1,0 +1,29 @@
+<ActionBar title="List of my products"></ActionBar>
+
+<ScrollView>
+  <GridLayout>
+    <StackLayout>
+      <Label text="Some text"></Label>
+    </StackLayout>
+    <StackLayout
+      class="weatherForecast"
+      *ngFor="let product of products"
+      [nsRouterLink]="['/productdetails']"
+      (tap)="getProductDetails(product.id)"
+    >
+      <!-- <Label [text]="myTitle"></Label> -->
+
+      <Label
+        class="weather"
+        [text]="product.attributes.Title"
+        textWrap="true"
+      ></Label>
+      <Label class="temp" [text]="product.attributes.Description"></Label>
+      <Label class="price" text="$ 399" textWrap="true"></Label>
+      <Image
+        class="weatherImage"
+        [src]="product.attributes.ProductImage.data[0].attributes.url"
+      ></Image>
+    </StackLayout>
+  </GridLayout>
+</ScrollView>
