@@ -1,5 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
+interface Product {
+  data: [{
+    attributes:{
+      Title: string,
+      Description: string,
+      ProductImage: {
+        data: {
+          attributes: {
+            formats: {
+              small: {
+                url: string
+              }
+            }
+          }
+        }
+      }
+    }
+  }]
+}
+
 @Component({
   selector: 'ns-products',
   templateUrl: './products.component.html',
