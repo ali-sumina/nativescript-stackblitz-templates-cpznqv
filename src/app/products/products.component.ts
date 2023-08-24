@@ -41,10 +41,11 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
     this.http
-      .get<Product>(this.url + '/api/products?populate=*')
+      .get<any>(this.url + '/api/products?populate=*')
       .subscribe((res) => {
-        console.log(res);
+        console.log('This is res' + res);
         this.products = res.data;
+        console.log('This is this.products' + this.products);
       });
   }
 }
