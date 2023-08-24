@@ -2,23 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 interface Product {
-  data: [{
-    attributes:{
-      Title: string,
-      Description: string,
-      ProductImage: {
-        data: {
-          attributes: {
-            formats: {
-              small: {
-                url: string
-              }
-            }
-          }
-        }
-      }
+  data: [
+    {
+      attributes: {
+        Title: string;
+        Description: string;
+        ProductImage: {
+          data: {
+            attributes: {
+              formats: {
+                small: {
+                  url: string;
+                };
+              };
+            };
+          };
+        };
+      };
     }
-  }]
+  ];
 }
 
 @Component({
@@ -39,7 +41,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
     this.http
-      .get<any>(this.url + '/api/products?populate=*')
+      .get<Product>(this.url + '/api/products?populate=*')
       .subscribe((res) => {
         console.log(res);
         this.products = res.data;
